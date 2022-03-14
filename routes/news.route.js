@@ -10,4 +10,3 @@ router.get('/news/:id', newsController.getNewsById) //вывод определ�
 router.get('/news/category/:id', newsController.getNewsByCategory) //вывод всех новостей по категории
 //лагман
 module.exports = router;
-

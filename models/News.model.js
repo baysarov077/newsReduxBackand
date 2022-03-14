@@ -8,12 +8,6 @@ const newsSchema = Schema({
     ref: "Category",
     type: Schema.Types.ObjectId,
   },
-  comment: [
-    {
-      ref: "Category",
-      type: Schema.Types.ObjectId,
-    },
-  ],
 });
 const News = mongoose.model("News", newsSchema);
 module.exports = News;

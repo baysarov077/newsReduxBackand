@@ -4,6 +4,7 @@ const app = express();
 
 app.use(express.json());
 app.use(require("./routes/"));
+app.use(cors())
 
 mongoose
   .connect(

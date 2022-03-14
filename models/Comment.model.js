@@ -5,7 +5,7 @@ const commentSchema = mongoose.Schema({
   text: String,
   news: {
     ref: "News",
-    type: Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
   },
 });
 

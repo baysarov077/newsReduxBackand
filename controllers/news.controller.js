@@ -7,7 +7,6 @@ module.exports.newsController = {
         title: req.body.title,
         text: req.body.text,
         category: req.body.category,
-        comment: req.body.comment,
       });
       res.json("Новость добавлена");
     } catch (err) {
@@ -24,7 +23,7 @@ module.exports.newsController = {
   },
   getNews: async (req, res) => {
     try {
-      const getNews = await News.find().populate("Category");
+      const getNews = await News.find();
       res.json(getNews);
     } catch (err) {
       console.log(err);

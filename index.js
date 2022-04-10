@@ -3,9 +3,10 @@ const mongoose = require("mongoose");
 const app = express();
 const cors = require("cors");
 
+app.use(cors());
 app.use(express.json());
 app.use(require("./routes/"));
-app.use(cors());
+
 
 mongoose
   .connect(
@@ -14,6 +15,6 @@ mongoose
   .then(() => console.log("Успешное соединение..."))
   .catch(() => console.log("Не удалось соединиться!"));
 
-app.listen(3000, () => {
+app.listen(4000, () => {
   console.log("Сервер запущен...");
 });

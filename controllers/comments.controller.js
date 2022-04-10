@@ -1,17 +1,23 @@
 const Comment = require("../models/Comment.model");
+const jwt = require('jsonwebtoken')
 
 module.exports.commentsControllers = {
   addComment: async (req, res) => {
-    try {
-      await Comment.create({
-        author: req.body.author,
-        text: req.body.text,
-        news: req.params.newsId,
-      });
-      res.json("Комментарий добавлен!");
-    } catch (error) {
-      res.json(error.message);
+    const { text, user } = req.body
+    const { news } = req.params
+    try{
+      const comment = await Comment.create({
+        user,
+        news,
+        text
+      })
+      return res.json(comment)
+    } catch(e) {
+      console.log(e);
     }
+
+
+    res.json(token)
   },
   delComment: async (req, res) => {
     try {

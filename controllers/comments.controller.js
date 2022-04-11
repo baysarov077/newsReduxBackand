@@ -8,7 +8,7 @@ module.exports.commentsControllers = {
     try{
       const comment = await Comment.create({
         user,
-        news,
+        news: req.params.newsId,
         text
       })
       return res.json(comment)
